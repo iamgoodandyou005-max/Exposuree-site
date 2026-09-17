@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ember & Bean — Café & Restaurant in Cumilla</title>
+<meta name="description" content="Freshly prepared food, handcrafted coffee, and a place to slow down. Ember & Bean is a café and casual restaurant in Cumilla, Bangladesh.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%94%A5%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<!-- ============ HEADER / NAV ============ -->
+<header class="site-header" id="site-header">
+  <div class="nav-wrap">
+    <a href="#home" class="logo" data-view-link="home">
+      <svg class="logo-mark" viewBox="0 0 40 40" width="30" height="30" aria-hidden="true">
+        <path d="M20 3c-1.5 5-7 8-7 15a7 7 0 0 0 14 0c0-3-1.5-5-3-6.5.6 3-1 4.5-2 4.5-1.3 0-2-1-1.5-2.5 1-3-.3-7.5-.5-10.5z" fill="currentColor"/>
+      </svg>
+      <span>Ember <em>&amp;</em> Bean</span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <a href="#home" data-view-link="home">Home</a>
+      <a href="#menu" data-view-link="menu">Menu</a>
+      <a href="#about" data-view-link="home">About</a>
+      <a href="#gallery" data-view-link="home">Gallery</a>
+      <a href="#contact" data-view-link="home">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn btn-primary btn-sm" id="order-now-btn" type="button">Order Now</button>
+      <button class="icon-btn cart-btn" id="cart-toggle" type="button" aria-label="Open your order" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 6h2l2.4 11.2A2 2 0 0 0 10.35 19H18a2 2 0 0 0 1.95-1.55L21.5 10H6.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10.5" cy="21.5" r="1.4" fill="currentColor"/><circle cx="17.5" cy="21.5" r="1.4" fill="currentColor"/></svg>
+        <span class="cart-count" id="cart-count" hidden>0</span>
+      </button>
+      <button class="icon-btn menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+<!-- ============ HOME VIEW ============ -->
+<div id="home-view" class="view">
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=1600&q=75" alt="Warm, dimly lit interior of Ember & Bean with wooden tables and pendant lighting" loading="eager">
+    </div>
+    <div class="hero-content">
+      <p class="hero-kicker">Cumilla's corner for good food and slow mornings</p>
+      <h1 class="hero-title">Good food.<br>Warm moments.</h1>
+      <p class="hero-sub">Freshly prepared food, handcrafted coffee, and a place to slow down.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" data-view-link="menu">View Menu</button>
+        <button class="btn btn-ghost" id="hero-order-btn" type="button">Order Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED MENU -->
+  <section class="section featured-menu" id="featured-menu">
+    <div class="section-head">
+      <h2>What people order first</h2>
+      <p>Six dishes that keep regulars coming back.</p>
+    </div>
+    <div class="menu-grid" id="featured-menu-grid"></div>
+    <div class="section-cta">
+      <button class="btn btn-outline" data-view-link="menu">See the full menu</button>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="about-media">
+      <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=75" loading="lazy" alt="Barista pouring latte art into a cup at the Ember & Bean counter">
+    </div>
+    <div class="about-content">
+      <p class="eyebrow">Our story</p>
+      <h2>Started with a counter and a coffee grinder</h2>
+      <p>Ember &amp; Bean began as a small corner counter serving coffee to students on their way to class. It grew into a full kitchen, but the idea never changed: cook like you know who's eating it. We shop fresh most mornings, keep the kitchen open late, and leave the couch by the window free for whoever needs it most.</p>
+      <p>Today we're a spot for study sessions, first dates, family dinners, and the after-work crowd — all under one warm roof in the heart of Cumilla.</p>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section why-us" id="why-us">
+    <div class="section-head">
+      <h2>Why people keep coming back</h2>
+    </div>
+    <ul class="why-list">
+      <li>
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M12 3c2 4 6 6 6 11a6 6 0 0 1-12 0c0-2.3 1-4 2.3-5.4-.2 2.4.8 3.5 1.7 3.5 1 0 1.6-.8 1.2-2-.8-2.3.2-5.4.8-7.1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <div>
+          <h3>Fresh ingredients</h3>
+          <p>We shop for produce most mornings and skip anything that's been sitting around. If it's not fresh, it's not on the plate.</p>
+        </div>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M4 12h16M4 12a8 8 0 0 1 16 0M4 12a8 8 0 0 0 16 0M9 8l1.5 2M15 8l-1.5 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <h3>Made to order</h3>
+          <p>Nothing is pre-plated under a heat lamp. Your order goes into the kitchen the moment you place it.</p>
+        </div>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M4 19v-6a8 8 0 0 1 16 0v6M2 19h20M6 19v-3M18 19v-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <h3>Cozy atmosphere</h3>
+          <p>Warm light, soft seating, and enough room to actually talk. Come for the food, stay for the couch by the window.</p>
+        </div>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <h3>Fast service</h3>
+          <p>Most orders reach your table in under 20 minutes, even during the evening rush.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section gallery" id="gallery">
+    <div class="section-head">
+      <h2>A look inside</h2>
+      <p>Tap any photo for a closer look.</p>
+    </div>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section reviews" id="reviews">
+    <div class="section-head">
+      <h2>What regulars say</h2>
+    </div>
+    <div class="reviews-row" id="reviews-row"></div>
+  </section>
+
+  <!-- LOCATION / CONTACT -->
+  <section class="section location" id="contact">
+    <div class="section-head">
+      <h2>Find us</h2>
+      <p>Come by, call ahead, or send us a message.</p>
+    </div>
+    <div class="location-grid">
+      <div class="location-info">
+        <div class="info-block">
+          <h3>Address</h3>
+          <p>Kandirpar, Cumilla 3500, Bangladesh</p>
+        </div>
+        <div class="info-block">
+          <h3>Hours</h3>
+          <p>Every day, 10:00 AM – 11:00 PM</p>
+        </div>
+        <div class="contact-buttons">
+          <a class="btn btn-outline" href="tel:+8801XXXXXXXXX">Call us</a>
+          <a class="btn btn-outline" href="https://wa.me/8801XXXXXXXXX?text=Hi%20Ember%20%26%20Bean%2C%20I%20have%20a%20question" target="_blank" rel="noopener">WhatsApp us</a>
+        </div>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <h3>Send a message</h3>
+          <div class="form-row">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" required autocomplete="name">
+          </div>
+          <div class="form-row">
+            <label for="cf-phone">Phone</label>
+            <input type="tel" id="cf-phone" name="phone" required autocomplete="tel" inputmode="tel">
+          </div>
+          <div class="form-row">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="3" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Send via WhatsApp</button>
+          <p class="form-note">Opens WhatsApp with your message filled in — you send it from there.</p>
+        </form>
+      </div>
+      <div class="location-map">
+        <iframe title="Ember & Bean location map" src="https://www.google.com/maps?q=Kandirpar%2C%20Cumilla%2C%20Bangladesh&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Hungry yet?</h2>
+    <p>Browse the full menu and get it delivered, or come sit with us.</p>
+    <button class="btn btn-primary btn-lg" id="cta-order-btn" type="button">Order Now</button>
+  </section>
+
+</div>
+
+<!-- ============ MENU VIEW ============ -->
+<div id="menu-view" class="view" hidden>
+  <section class="menu-page">
+    <div class="menu-page-head">
+      <p class="eyebrow">Full menu</p>
+      <h1>Everything we make</h1>
+      <p class="menu-page-sub">Search, filter by category, and add whatever looks good.</p>
+    </div>
+
+    <div class="menu-controls">
+      <div class="search-field">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m20 20-3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <input type="search" id="menu-search" placeholder="Search the menu…" aria-label="Search the menu">
+      </div>
+      <div class="category-pills" id="category-pills" role="tablist" aria-label="Menu categories"></div>
+    </div>
+
+    <p class="menu-empty" id="menu-empty" hidden>No dishes match your search. Try another term or category.</p>
+    <div class="menu-grid menu-grid--full" id="full-menu-grid"></div>
+  </section>
+</div>
+
+</main>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Your order">
+  <div class="cart-header">
+    <h2>Your order</h2>
+    <button class="icon-btn" id="cart-close" aria-label="Close your order">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <div class="cart-body" id="cart-body">
+    <div class="cart-empty" id="cart-empty">
+      <p>Your order is empty.</p>
+      <button class="btn btn-outline" data-view-link="menu" data-close-cart>Browse the menu</button>
+    </div>
+    <ul class="cart-items" id="cart-items"></ul>
+  </div>
+
+  <div class="cart-footer" id="cart-footer" hidden>
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span id="cart-subtotal-amount">৳0</span>
+    </div>
+
+    <div class="fulfillment-toggle" role="radiogroup" aria-label="Order type">
+      <button type="button" class="fulfillment-option is-active" data-fulfillment="delivery">Delivery</button>
+      <button type="button" class="fulfillment-option" data-fulfillment="pickup">Pickup</button>
+    </div>
+
+    <div class="form-row" id="address-row">
+      <label for="order-address">Delivery address</label>
+      <textarea id="order-address" rows="2" placeholder="House, road, area…"></textarea>
+    </div>
+    <div class="form-row">
+      <label for="order-phone">Phone number</label>
+      <input type="tel" id="order-phone" inputmode="tel" placeholder="01XXXXXXXXX">
+    </div>
+
+    <button class="btn btn-primary btn-lg" id="place-order-btn" type="button">Place order via WhatsApp</button>
+    <p class="form-note">We'll open WhatsApp with your order filled in — just hit send.</p>
+  </div>
+</aside>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox">
+  <button class="icon-btn lightbox-close" id="lightbox-close" aria-label="Close photo">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+  </button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- ============ TOAST ============ -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#home" class="logo" data-view-link="home">
+        <svg class="logo-mark" viewBox="0 0 40 40" width="26" height="26" aria-hidden="true">
+          <path d="M20 3c-1.5 5-7 8-7 15a7 7 0 0 0 14 0c0-3-1.5-5-3-6.5.6 3-1 4.5-2 4.5-1.3 0-2-1-1.5-2.5 1-3-.3-7.5-.5-10.5z" fill="currentColor"/>
+        </svg>
+        <span>Ember <em>&amp;</em> Bean</span>
+      </a>
+      <p>A café and casual restaurant in Cumilla, made for slowing down.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Ember & Bean on Facebook" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5z" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="Ember & Bean on Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="7" r="1.1" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick links</h3>
+      <a href="#home" data-view-link="home">Home</a>
+      <a href="#menu" data-view-link="menu">Menu</a>
+      <a href="#about" data-view-link="home">About</a>
+      <a href="#gallery" data-view-link="home">Gallery</a>
+      <a href="#contact" data-view-link="home">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Visit</h3>
+      <p>Kandirpar, Cumilla 3500, Bangladesh</p>
+      <p>Every day, 10:00 AM – 11:00 PM</p>
+      <p><a href="tel:+8801XXXXXXXXX">+880 1XXX-XXXXXX</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="footer-year"></span> Ember &amp; Bean. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
